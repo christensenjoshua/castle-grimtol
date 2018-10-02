@@ -14,17 +14,25 @@ namespace castle_grimtol
             var _game = new Gameplay();
             Console.WriteLine("Welcome to Castle Grimtol.  Would you like to enter? (Y/N)");
             string resp = Console.ReadLine();
-            resp.ToUpper();
+            resp = resp.ToUpper();
             if (resp == "Y")
             {
                 bool playing = true;
                 Console.WriteLine(_game.StartGame());
+                Console.ReadLine();
                 while (playing)
                 {
                     Console.Clear();
                     Console.WriteLine("What do you do?");
                     string cmd = Console.ReadLine();
-                    Console.WriteLine(_game.ProcessCommand(cmd));
+                    string cmdResp = _game.ProcessCommand(cmd);
+                    if(cmdResp == "exit")
+                    {
+                        playing = false;
+                        continue;
+                    }
+                    Console.WriteLine(cmdResp);
+                    Console.WriteLine("Press any key to continue");
                     Console.ReadLine();
                 }
             }
