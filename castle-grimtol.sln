@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "castle-grimtol", "castle-grimtol\castle-grimtol.csproj", "{2E442FB7-1F18-40F2-8E88-14F7D33D8719}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1F28B4B9-6E32-4B7C-844A-28D12499F5EA} = {1F28B4B9-6E32-4B7C-844A-28D12499F5EA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grimtol-lib", "..\grimtol-lib\grimtol-lib\grimtol-lib.csproj", "{1F28B4B9-6E32-4B7C-844A-28D12499F5EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{2E442FB7-1F18-40F2-8E88-14F7D33D8719}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E442FB7-1F18-40F2-8E88-14F7D33D8719}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E442FB7-1F18-40F2-8E88-14F7D33D8719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F28B4B9-6E32-4B7C-844A-28D12499F5EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F28B4B9-6E32-4B7C-844A-28D12499F5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F28B4B9-6E32-4B7C-844A-28D12499F5EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F28B4B9-6E32-4B7C-844A-28D12499F5EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
