@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\grimtol-lib\grimtol-lib\grimtol-lib.csproj">
-      <Project>{1f28b4b9-6e32-4b7c-844a-28d12499f5ea}</Project>
-      <Name>grimtol-lib</Name>
+    <ProjectReference Include="..\grimtolLib\grimtolLib.csproj">
+      <Project>{13AD1BEA-8F85-4FD9-88AC-160C6F771D22}</Project>
+      <Name>grimtolLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
