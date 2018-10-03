@@ -17,20 +17,14 @@ namespace castle_grimtol
             resp = resp.ToUpper();
             if (resp == "Y")
             {
-                bool playing = true;
                 Console.WriteLine(_game.StartGame());
                 Console.ReadLine();
-                while (playing)
+                while (_game.GameState())
                 {
                     Console.Clear();
                     Console.WriteLine("What do you do?");
                     string cmd = Console.ReadLine();
                     string cmdResp = _game.ProcessCommand(cmd);
-                    if(cmdResp == "exit")
-                    {
-                        playing = false;
-                        continue;
-                    }
                     Console.WriteLine(cmdResp);
                     Console.WriteLine("Press any key to continue");
                     Console.ReadLine();
