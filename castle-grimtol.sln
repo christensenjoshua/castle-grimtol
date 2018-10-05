@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "castle-grimtol", "castle-grimtol\castle-grimtol.csproj", "{2E442FB7-1F18-40F2-8E88-14F7D33D8719}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13AD1BEA-8F85-4FD9-88AC-160C6F771D22} = {13AD1BEA-8F85-4FD9-88AC-160C6F771D22}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grimtolLib", "grimtolLib\grimtolLib.csproj", "{13AD1BEA-8F85-4FD9-88AC-160C6F771D22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "grimtolLib", "grimtolLib\grimtolLib.csproj", "{13AD1BEA-8F85-4FD9-88AC-160C6F771D22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\grimtolLib\grimtolLib.csproj">
-      <Project>{13AD1BEA-8F85-4FD9-88AC-160C6F771D22}</Project>
+      <Project>{13ad1bea-8f85-4fd9-88ac-160c6f771d22}</Project>
       <Name>grimtolLib</Name>
     </ProjectReference>
   </ItemGroup>

@@ -91,6 +91,7 @@ namespace grimtolLib
                             ;
                     }
                     return Look();
+                case "H":
                 case "HELP":
                     return "[GO] North, South, East, West\n" +
                         "[HELP]\n" +
@@ -109,6 +110,7 @@ namespace grimtolLib
                     return itemResp;
                     ;
                 case "EX":
+                case "EXIT":
                     Playing = false;
                     return "Thanks for playing!";
                     ;
@@ -116,9 +118,13 @@ namespace grimtolLib
                     return Look();
                     ;
                 case "TAKE":
+                    if(currRoom.item == "")
+                    {
+                        return "There is nothing here for you to take.";
+                    }
                     Items.Add(currRoom.item);
                     currRoom.item = "";
-                    return "took something...";
+                    return $"You took the -{currRoom.item}-.";
                     ;
                 case "USE":
                     // no option, sho inventory
@@ -145,8 +151,8 @@ namespace grimtolLib
                                 return $"Trying to use {itemName}\n" +
                                 "You open the locked door."+
                                 "A big dog sits on the other side...\n"+
-                                "He looks at you hungrily, and you remember you have a dog treat..." +
-                                "You give the dog the dog treat." +
+                                "He looks at you hungrily, and you remember you have a dog treat.\n" +
+                                "You give the dog the dog treat.\n" +
                                 "You and the dog leave the castle together; he's a good boy!!";
                             }
                             if(itemName == "key")

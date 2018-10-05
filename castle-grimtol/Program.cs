@@ -18,7 +18,7 @@ namespace castle_grimtol
                 while (_game.GameState())
                 {
                     Console.Clear();
-                    Console.WriteLine("What do you do?");
+                    Console.WriteLine("What do you do?\n Type [HELP] for command list.");
                     string cmd = Console.ReadLine();
                     string cmdResp = _game.ProcessCommand(cmd);
                     Console.WriteLine(cmdResp);
