@@ -32,9 +32,20 @@ namespace grimtolLib
             {
                 return "Invalid action!";
             }
-            cmd = cmd.ToUpper() + "  ";
-            string firstPart = cmd.Split(' ')[0];
-            string secondPart = cmd.Split(' ')[1];
+            cmd = cmd.ToUpper();
+            cmd.Trim();
+            string firstPart;
+            string secondPart;
+            if(cmd.Contains(' '))
+            {
+                firstPart = cmd.Split(' ')[0];
+                secondPart = cmd.Split(' ')[1];
+            }
+            else
+            {
+                firstPart = cmd;
+                secondPart = "";
+            }
             // need to handle split when command is only one thing.
             Room currRoom = Map[PosX, PosY];
             switch (firstPart)
@@ -85,6 +96,8 @@ namespace grimtolLib
                         "[HELP]\n" +
                         "[INV]entory\n" +
                         "[LOOK] around\n" +
+                        "[TAKE] something from the room.\n" +
+                        "[USE] an [ITEMNAME]\n" +
                         "[EX]it."
                     ;
                 case "INV":
@@ -109,7 +122,7 @@ namespace grimtolLib
                     ;
                 case "USE":
                     // no option, sho inventory
-                    if (currRoom.name != "final")
+                    if (currRoom.name != "mysterious room")
                     {
                         return "Nothing for you to do here.";
                     }
@@ -124,8 +137,34 @@ namespace grimtolLib
                     }
                     else
                     {
-                        string itemName = secondPart;
-                        return $"Trying to use {itemName}";
+                        string itemName = secondPart.ToLower();
+                        if(Items.Contains(itemName)){
+                            if(itemName == "key" && Items.Contains("dog treat")){
+                                // win condition
+                                Playing = false;
+                                return $"Trying to use {itemName}\n" +
+                                "You open the locked door."+
+                                "A big dog sits on the other side...\n"+
+                                "He looks at you hungrily, and you remember you have a dog treat..." +
+                                "You give the dog the dog treat." +
+                                "You and the dog leave the castle together; he's a good boy!!";
+                            }
+                            if(itemName == "key")
+                            {
+                                // lose condition
+                                Playing = false;
+                                return $"Trying to use {itemName}\n" +
+                                "You open the locked door.\n" +
+                                "A big dog sits on the other side...\n" +
+                                "He gobbles you up and you die!\n" +
+                                "Please play again!";
+                            }
+                            return "You cannot use that here.";
+                        }
+                        else
+                        {
+                            return "You do not have that item.";
+                        }
                     }
                     ;
                 default:
